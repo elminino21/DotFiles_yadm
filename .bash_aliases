@@ -1,4 +1,5 @@
 alias awsServer='ssh ubuntu@18.222.25.236 -i ~/.ssh/my-aws-instance.pem'
+alias awsElminino='ssh elminino@18.222.25.236 -i ~/.ssh/my-aws-instance.pem'
 alias piserver="ssh pi@10.0.0.189"
 alias piminino='ssh elminio@10.0.0.189'
 alias ls='ls --color=auto'
