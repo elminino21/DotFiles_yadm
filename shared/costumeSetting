@@ -3,12 +3,22 @@ echo 'My costome linux settup'
 cd
 #core section could cuase conflics if moved
 ########################3
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update && sudo apt-get upgrade yadm -y
 sudo apt install npm git -y
+# Git
+sudo apt-get install git git-core
+echo "Define your Git username"
+read username
+git config --global user.name "$username"
+echo "Define your Git email"
+read email
+git config --global user.email "$email"
+
+
 #########################
 
 
-sudo apt install openssh-server ranger password-gorilla yadm -y
+sudo apt install openssh-server ranger password-gorilla -y
 sudo apt-get install fonts-powerline
 apt-get install tmux zsh
 sudo apt-get install htop
@@ -19,8 +29,9 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 sudo npm install -g bower
 git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
-cp .tmux/.tmux.conf.local .
+#the below to lines will be downloaded by yadm 
+#ln -s -f .tmux/.tmux.conf
+#cp .tmux/.tmux.conf.local . #
 
 
 # G++
@@ -28,15 +39,6 @@ sudo apt-get install g++
 
 sudo apt install python-setuptools -y
 sudo easy_install -U pip
-
-# Git
-sudo apt-get install git git-core
-echo "Define your Git username"
-read username
-git config --global user.name "$username"
-echo "Define your Git email"
-read email
-git config --global user.email "$email"
 
 # Java
 sudo apt-get install python-software-properties
