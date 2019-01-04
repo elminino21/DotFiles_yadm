@@ -1,3 +1,9 @@
+#block auto starts tmux when shell is invoke
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
+
+
 # If you come from bash you might have to change your $PATH.
 source ~/.bash_aliases
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -14,7 +20,8 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir ssh aws vcs)
 ZSH_TMUX_AUTOSTART="true"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH="2"
-
+DISABLE_UPDATE_PROMPT=true
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history)
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

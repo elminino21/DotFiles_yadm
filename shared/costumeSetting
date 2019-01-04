@@ -1,17 +1,26 @@
 #!/bin/bash
 echo 'My costome linux settup'
-
+cd
+#core section could cuase conflics if moved
+########################3
 sudo apt-get update && sudo apt-get upgrade -y
+sudo apt install npm git -y
+#########################
+
 
 sudo apt install openssh-server ranger password-gorilla yadm -y
 sudo apt-get install fonts-powerline
 apt-get install tmux zsh
 sudo apt-get install htop
+TERM=xterm-256color #variable is needed for oh my tmux config
 x=$(which)
 chsh -s $x
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-
+sudo npm install -g bower
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
 
 
 # G++
@@ -46,7 +55,7 @@ sudo ufw allow mysql
 
 sudo apt-get install -y postgresql-9.3 postgresql-contrib-9.3 libpq-dev
 
-sudo apt install npm
+
 
 echo 'vim  settup and extentions for pathogen'
 sudo apt-get install vim
