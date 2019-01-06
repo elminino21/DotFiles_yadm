@@ -3,8 +3,9 @@ echo 'My costome linux settup'
 cd
 #core section could cuase conflics if moved
 ########################3
+mv .zshrc zshrc
 sudo apt-get update && sudo apt-get upgrade yadm -y
-sudo apt install npm git -y
+sudo apt install npm git zsh -y
 # Git
 sudo apt-get install git git-core
 echo "Define your Git username"
@@ -29,11 +30,9 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 sudo npm install -g bower
 git clone https://github.com/gpakosz/.tmux.git
-#the below to lines will be downloaded by yadm 
-#ln -s -f .tmux/.tmux.conf
-#cp .tmux/.tmux.conf.local . #
+mv zshrc .zshrc
 
-sudo apt-get install build-essential cmake python3-dev -y 
+
 # G++
 sudo apt-get install g++
 
