@@ -19,9 +19,9 @@ git config --global user.email "$email"
 
 
 sudo apt install openssh-server ranger password-gorilla -y
-sudo apt-get install fonts-powerline
-apt-get install tmux zsh
-sudo apt-get install htop
+sudo apt-get install fonts-powerline -y
+sudo apt-get install tmux zsh htop -y
+
 TERM=xterm-256color #variable is needed for oh my tmux config
 x=$(which)
 chsh -s $x
@@ -41,17 +41,15 @@ sudo apt install python-setuptools -y
 sudo easy_install -U pip
 
 # Java
-sudo apt-get install python-software-properties
+sudo apt-get install python-software-properties -y
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get install java-common oracle-java8-installer
+sudo apt-get install java-common oracle-java8-installer -y
 # sudo update-alternatives --config java
 sudo apt-get install oracle-java8-set-default
 
-yadm clone https://github.com/elminino21/DotFiles_yadm
 
-
-sudo apt-get install mysql-server
+sudo apt-get install mysql-server -y
 #Data bases
 sudo ufw allow mysql
 
@@ -60,13 +58,20 @@ sudo apt-get install -y postgresql-9.3 postgresql-contrib-9.3 libpq-dev
 
 
 echo 'vim  settup and extentions for pathogen'
-sudo apt-get install vim
+sudo apt-get install vim -y
+
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 echo "execute pathogen#infect()" >> .vimrc
 echo "syntax on" >> .vimrc
 echo "filetype plugin indent on" >> .vimrc
+echo "set autoread" >> .vimrc
+echo "set ignorecase " >> .vimrc
+echo "set shwomatch " >> .vimrc
+echo "set ai " >> .vimrc  # auto indent
+echo "set si " >> .vimrc   # smart indent
+echo "set number" >> .vimrc
 
 cd ~/.vim/bundle
 
@@ -120,3 +125,8 @@ python3 install.py --clang-completer
 
 python3 install.py --ts-completer
 
+######################
+sudo apt-get update && sudo apt-get upgrade -y
+yadm clone https://github.com/elminino21/DotFiles_yadm
+
+sudo reboot now
