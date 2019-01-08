@@ -8,19 +8,12 @@ mv .vimrc vimrc
 sudo apt-get update && sudo apt-get upgrade vim yadm -y
 
 
-sudo apt install npm git zsh tor -y
+sudo apt install npm git git-core zsh tor -y
 ################################
 #
 #
 #     git
 ############################
-sudo apt-get install git git-core
-echo "Define your Git username"
-read username
-git config --global user.name "$username"
-echo "Define your Git email"
-read email
-git config --global user.email "$email"
 
 sudo apt install openssh-server ranger password-gorilla -y
 sudo apt-get install fonts-powerline -y
