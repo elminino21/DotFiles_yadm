@@ -4,9 +4,16 @@ cd
 #core section could cuase conflics if moved
 ########################3
 mv .zshrc zshrc
-sudo apt-get update && sudo apt-get upgrade yadm -y
-sudo apt install npm git zsh -y
-# Git
+mv .vimrc vimrc
+sudo apt-get update && sudo apt-get upgrade vim yadm -y
+
+
+sudo apt install npm git zsh tor -y
+################################
+#
+#
+#     git
+############################
 sudo apt-get install git git-core
 echo "Define your Git username"
 read username
@@ -14,10 +21,6 @@ git config --global user.name "$username"
 echo "Define your Git email"
 read email
 git config --global user.email "$email"
-
-
-#########################
-
 
 sudo apt install openssh-server ranger password-gorilla -y
 sudo apt-get install fonts-powerline -y
@@ -30,16 +33,45 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 sudo npm install -g bower
 git clone https://github.com/gpakosz/.tmux.git
-mv zshrc .zshrc
+mv -f zshrc .zshrc
+mv -f vimrc .vimrc
+################################
+#
+#
+#     docker
+############################
 
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update
+apt-cache policy docker-ce
+docker-ce:
+  Installed: (none)
+    Candidate: 18.06.1~ce~3-0~ubuntu
+      Version table:
+           18.06.1~ce~3-0~ubuntu 500
+	           500 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages
 
-# G++
+sudo apt-get install -y docker-ce
+sudo systemctl status docker
+sudo usermod -aG docker ${USER}
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+################################
+#
+#
+#     G++
+############################
 sudo apt-get install g++
 
 sudo apt install python-setuptools -y
 sudo easy_install -U pip
-
-# Java
+################################
+#
+#
+#     Java
+############################
 sudo apt-get install python-software-properties -y
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
@@ -59,71 +91,18 @@ sudo apt-get install code # or code-insider -y
 
 
 
+############################################
+#         vim  installation and settings
+#
+#
+#         vim
+############################
+
+echo 'vim  settup and extentions for VundleVim'
 
 
-###############################################################
-####vim  installation and settings
-
-echo 'vim  settup and extentions for pathogen'
-sudo apt-get install vim -y
-
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-echo "execute pathogen#infect()" >> .vimrc
-echo "syntax on" >> .vimrc
-echo "filetype plugin indent on" >> .vimrc
-echo "set autoread" >> .vimrc
-echo "set ignorecase " >> .vimrc
-echo "set showmatch " >> .vimrc
-echo "set ai " >> .vimrc  # auto indent
-echo "set si " >> .vimrc   # smart indent
-echo "set number" >> .vimrc
-
-cd ~/.vim/bundle
-
-git clone https://github.com/jiangmiao/auto-pairs
-
-git clone https://github.com/wolfgangmehner/c-support
-
-git clone https://github.com/vim-scripts/c.vim
-
-git clone https://github.com/scrooloose/nerdtree
-
-git clone https://github.com/majutsushi/tagbar
-
-git clone https://github.com/octol/vim-cpp-enhanced-highlight
-
-
-git clone https://github.com/pangloss/vim-javascript
-
-git clone https://github.com/myhere/vim-nodejs-complete
-
-git clone https://github.com/juleswang/css.vim
-
-git clone https://github.com/kien/ctrlp.vim
-
-git clone https://github.com/othree/html5.vim
-
-git clone https://github.com/klen/python-mode
-
-git clone https://github.com/vim-airline/vim-airline
-
-git clone https://github.com/airblade/vim-gitgutter
-
-git clone https://github.com/mxw/vim-jsx
-
-git clone https://github.com/leafgarland/typescript-vim
-
-git clone https://github.com/sirver/ultisnips
-
-git clone https://github.com/Valloric/YouCompleteMe.git
-
-
-
-
-
-
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 ##############################################
 cd ~/.vim/bundle/YouCompleteMe
