@@ -14,11 +14,11 @@ sudo apt install npm git git-core zsh tor -y
 #
 #     git
 ############################
-
-sudo apt install openssh-server ranger password-gorilla -y
+sudo apt-get install uqlitebrowser
+sudo apt install openssh-server ranger password-gorilla uqlitebrowser -y
 sudo apt-get install fonts-powerline -y
 sudo apt-get install tmux zsh htop -y
-
+sudo npm install -g @angular/cli -y
 TERM=xterm-256color #variable is needed for oh my tmux config
 x=$(which)
 chsh -s $x
@@ -93,7 +93,7 @@ sudo apt-get install code # or code-insider -y
 
 echo 'vim  settup and extentions for VundleVim'
 
-
+sudo apt-get install build-essential cmake python3-dev -y
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
@@ -103,7 +103,7 @@ git submodule update --init --recursive
 python3 install.py --clang-completer
 
 python3 install.py --ts-completer
-
+./install.py
 ######################
 sudo apt-get update && sudo apt-get upgrade -y
 yadm clone https://github.com/elminino21/DotFiles_yadm
