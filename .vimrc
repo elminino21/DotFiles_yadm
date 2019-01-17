@@ -1,3 +1,5 @@
+
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -10,7 +12,6 @@ Plugin 'VundleVim/Vundle.vim'"
 
 
 Plugin 'chun-yang/auto-pairs'
-Plugin 'wolfgangmehner/c-support'
 Plugin 'tpope/vim-surround'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'majutsushi/tagbar'
@@ -26,11 +27,28 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'elzr/vim-json'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'sirver/ultisnips'
 Plugin 'valloric/youcompleteme'
+Plugin 'SirVer/ultisnips'
+Bundle 'ervandew/supertab'
 Plugin 'honza/vim-snippets'
+Plugin 'luochen1990/rainbow'
+Plugin 'alpertuna/vim-header'
 
 
+"letM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+"auto header configuration
+let g:header_field_author = 'Jose Gonzalez'
+let g:header_field_author_email = 'joseaugusto978@gmail.com'
+let g:header_field_copyright = 'GNU AGPLv3'
 
 syntax on
 filetype plugin indent on
@@ -45,13 +63,7 @@ set number
 " Snippets are separated from the engine. Add this if you want them:
 
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
- let g:UltiSnipsEditSplit="vertical"
-
+nmap <F6> :NERDTreeToggle<CR>
  call vundle#end()            " required
  filetype plugin indent on    " required
+
