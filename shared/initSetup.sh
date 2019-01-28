@@ -1,21 +1,27 @@
 #!/bin/bash
+# GNU AGPLv3
+# File              : initSetup.sh
+# Author            : Jose Gonzalez <joseaugusto978@gmail.com>
+# Date              : 18.01.2019
+# Last Modified Date: 20.01.2019
+# Last Modified By  : Jose Gonzalez <joseaugusto978@gmail.com>
 echo 'My costome linux settup'
 cd
 #core section could cuase conflics if moved
 ########################3
 mv .zshrc zshrc
 mv .vimrc vimrc
-sudo apt-get update && sudo apt-get upgrade vim yadm -y
-
+sudo apt-get update && sudo apt-get upgrade sqlitebrowser vim yadm -y
 
 sudo apt install npm git git-core zsh tor -y
+sudo npm install @angular/cli
 ################################
 #
 #
 #     git
 ############################
-sudo apt-get install uqlitebrowser
-sudo apt install openssh-server ranger password-gorilla uqlitebrowser -y
+sudo apt-get install uqlitebrowser python3.6 neovim tree -y
+sudo apt install openssh-server ranger python-pip password-gorilla uqlitebrowser -y
 sudo apt-get install fonts-powerline -y
 sudo apt-get install tmux zsh htop -y
 sudo npm install -g @angular/cli -y
@@ -91,21 +97,11 @@ sudo apt-get install code # or code-insider -y
 #         vim
 ############################
 
-echo 'vim  settup and extentions for VundleVim'
+echo 'vim  settup and extentions for NeoVim'
 
 sudo apt-get install build-essential cmake python3-dev -y
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-
-##############################################
-cd ~/.vim/bundle/YouCompleteMe
-git submodule update --init --recursive
-python3 install.py --clang-completer
-
-python3 install.py --ts-completer
-./install.py
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ######################
+pip install neovim
 sudo apt-get update && sudo apt-get upgrade -y
-yadm clone https://github.com/elminino21/DotFiles_yadm
-
-sudo reboot now

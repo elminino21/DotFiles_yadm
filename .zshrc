@@ -1,3 +1,10 @@
+##!/bin/zsh
+# GNU AGPLv3
+# File              : .zshrc
+# Author            : Jose Gonzalez <joseaugusto978@gmail.com>
+# Date              : 20.01.2019
+# Last Modified Date: 21.01.2019
+# Last Modified By  : Jose Gonzalez <joseaugusto978@gmail.com>
 #block auto starts tmux when shell is invoke
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux

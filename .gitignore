@@ -1,6 +1,5 @@
 # Compiled source #
 ###################
-*.com
 *.class
 *.dll
 *.exe
@@ -29,7 +28,7 @@
 *.log
 *.sql
 *.sqlite
-
+*.db
 # OS generated files #
 ######################
 .DS_Store*
@@ -54,6 +53,8 @@ nupkg/
  *.user
  *.userosscache
  *.sln.docstates
+ bin/
+ obj/
 #
 # # Build results
  [Dd]ebug/
