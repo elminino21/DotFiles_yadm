@@ -121,7 +121,7 @@ source $ZSH/oh-my-zsh.sh
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
  else
-   export EDITOR='mvim'
+   export EDITOR='nvim'
  fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

@@ -9,7 +9,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias mssql='sqlcmd -S localhost -U SA'
 alias psqladmin="sudo -u postgres psql"
-alias restore="tmux source-file ~/.tmux.conf && source ~/.zshrc && source ~/.vimrc && sudo apt-get update && sudo apt-get upgrade -y" # Refresh shortcuts manually and reload bashrc
+alias restore="{ tmux source-file ~/.tmux.conf && source ~/.zshrc && source ~/.config/nvim/init.vim && sudo apt-get update && sudo apt-get upgrade -y} 1> /dev/null 2>&1" # Refresh shortcuts manually and reload bashrc
 alias v='nvim -p'
 alias vim='nvim -p'
 # Power

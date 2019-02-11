@@ -13,7 +13,6 @@ Plug 'chun-yang/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pangloss/vim-javascript'
 Plug 'myhere/vim-nodejs-complete'
 Plug 'mattn/emmet-vim'
@@ -37,6 +36,10 @@ Plug 'godlygeek/tabular'
 Plug 'tibabit/vim-templates'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ryanoasis/nerd-fonts', {'do': './install.sh Hack'}
+Plug 'arakashic/chromatica.nvim'
+Plug 'bfredl/nvim-miniyank'
+Plug 'roxma/vim-tmux-clipboard'
+Plug 'Yggdroot/indentLine'
 " this plug in should be the last one to load
 Plug 'ryanoasis/vim-devicons'
 " Initialize plugin system
