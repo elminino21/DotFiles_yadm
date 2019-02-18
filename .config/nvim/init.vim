@@ -39,12 +39,16 @@ Plug 'ryanoasis/nerd-fonts', {'do': './install.sh Hack'}
 Plug 'arakashic/chromatica.nvim'
 Plug 'bfredl/nvim-miniyank'
 Plug 'roxma/vim-tmux-clipboard'
-Plug 'Yggdroot/indentLine'
+Plug '907th/vim-auto-save'
+Plug 'ap/vim-css-color'
 " this plug in should be the last one to load
 Plug 'ryanoasis/vim-devicons'
 " Initialize plugin system
 call plug#end()
 
+"vim auto save
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_silent = 1  " do not display the auto-save notification
 "letM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
