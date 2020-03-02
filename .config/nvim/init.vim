@@ -32,6 +32,7 @@ Plug 'roxma/vim-tmux-clipboard'
 Plug '907th/vim-auto-save'
 Plug 'dense-analysis/ale'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'alpertuna/vim-header'
 " this plug in should be the last one to load
 Plug 'ryanoasis/vim-devicons'
 " Initialize plugin system
@@ -113,3 +114,9 @@ let g:ale_linters = {
 let g:ale_sign_column_always = 1
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
+
+
+let g:header_field_author = 'Jose Gonzalez'
+let g:header_field_author_email = 'joseaugusto978@gmail.com'
+let g:header_field_copyright = 'Copyright (c) 2020 Inc. All rights reserved.'
+let g:header_auto_add_header = 1

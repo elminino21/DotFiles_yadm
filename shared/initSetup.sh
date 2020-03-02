@@ -4,8 +4,6 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install nodejs -y
 sudo npm install @angular/cli
 ################################
-#
-#
 #     git
 ############################
 sudo apt-get install uqlitebrowser python3.6 neovim tree -y
@@ -24,8 +22,6 @@ mv -f vimrc .vimrc
 
 
 ################################
-#
-#
 #     G++
 ############################
 sudo apt-get install g++
@@ -38,8 +34,6 @@ sudo apt-get install -y postgresql-9.3 postgresql-contrib-9.3 libpq-dev
 
 ############################################
 #         vim  installation and settings
-#
-#
 #         vim
 ############################
 
