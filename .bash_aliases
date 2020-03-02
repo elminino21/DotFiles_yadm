@@ -15,6 +15,7 @@ alias vim='nvim -p'
 # Power
 alias reboot="sudo shutdown -r now"
 alias shut="sudo shutdown -h now"
+alias history="--all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
