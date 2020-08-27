@@ -1,4 +1,10 @@
 #!/bin/bash
+# Copyright (c) 2020 Inc. All rights reserved.
+# File              : .bash_aliases
+# Author            : Jose Gonzalez <joseaugusto978@gmail.com>
+# Date              : 22.08.2020
+# Last Modified Date: 22.08.2020
+# Last Modified By  : Jose Gonzalez <joseaugusto978@gmail.com>
 alias awsServer='ssh ubuntu@18.222.25.236 -i ~/.ssh/my-aws-instance.pem'
 alias awsElminino='ssh elminino@18.222.25.236 -i ~/.ssh/my-aws-instance.pem'
 alias piserver="ssh pi@10.0.0.189"
