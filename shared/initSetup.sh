@@ -1,6 +1,7 @@
 #!/bin/bash # GNU AGPLv3 File          	
 
 sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get install npm -y
 sudo apt-get install nodejs -y
 sudo npm install @angular/cli
 ################################
@@ -39,3 +40,5 @@ sudo apt-get install -y postgresql-9.3 postgresql-contrib-9.3 libpq-dev
 
 sudo apt-get install neovim -y
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+chmod +x installDocker
+./installDocker.sh
